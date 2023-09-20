@@ -4,7 +4,7 @@ use estacionamento;
 
 create table veiculo ( idVeiculo int primary key auto_increment, fabricante varchar(50) not null, modelo varchar(80) not null, placa char(7) not null unique);
 
-alter table veiculo rename to carro;
+alter table veiculo rename to carro;s
 
 desc carro;
 

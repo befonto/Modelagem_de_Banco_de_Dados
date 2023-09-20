@@ -76,6 +76,42 @@ insert into leciona values ( null, 22, 1902 );
 
 insert into leciona values ( null, 23, 1903 );
 
+insert into professor values ( 202314, 'Jefferson Brandão', 'Informática' );
+
+insert into disciplina values ( 58, 'Lógica de Programação' );
+
+update professor set nome = 'Vicente Orsino' where matricula = 202312;
+
+insert into turma values ( 2023100, 'M', 'Técnico de Comunicação Visual' );
+
+insert into leciona values ( 704, 58, 202314 );
+
+insert into possui values ( 214, 58, 2023080 );
+
+update aluno set nascimento = '2004-08-14' where matricula = 3006;
+
+update aluno set nascimento = '1999-04-18' where matricula = 3007;
+
+alter table professor add email varchar(80) not null after nome;
+
+update professor set email = 'sdsilva@email.com' where matricula = 202311;
+
+update professor set email = 'vicorsi@email.com' where matricula = 202312;
+
+update professor set email = 'flamendes@email.com' where matricula = 202313;
+
+update professor set email = 'jeffdão@email.com' where matricula = 202314;
+
+insert into possui values (null, 56, 2023100);
+
+insert into aluno values ( 3008, 'Judite Presley', '2000-06-28', '123.456.789-07', 'Elvis Presley', 'judpres@email.com' );
+
+insert into estuda values ( 7508, 3008, 2023100 );
+
+ update disciplina set nome = 'Programação Python' where cod_disciplina = 55;
+
+
+
 
 
 select * from aluno;

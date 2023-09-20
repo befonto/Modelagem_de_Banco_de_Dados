@@ -17,11 +17,25 @@ alter table carro modify cor char(8) not null;
 alter table carro change modelo nome_modelo varchar(50) not null;
 
 alter table carro drop cor;
+select
+insert into carro values ( 101, 'W', 'Gol', 'ABC1234' );
 
+insert into carro values ( 102, 'FIAT', 'Marea Turbo', 'ABC1235' );
 
+insert into carro values ( 103, 'Ford', 'Ka', 'ABC1236' );
 
+insert into carro values ( 104, 'Toyota', 'Corolla', 'ABC1237' );
 
+insert into carro values ( 105, 'Honda', 'Civic', 'ABC1238' );
 
+update carro set nome_modelo = 'Ka Sedan' where  idVeiculo = 103;
 
+delete from carro where idVeiculo = 102;
+
+select * from carro where placa = 'ABC1238';
+
+select fabricante, nome_modelo, placa from carro where placa = 'ABC1238';
+
+select * from carro where fabricante = 'Toyota';
 
 

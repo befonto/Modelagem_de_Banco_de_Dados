@@ -108,10 +108,138 @@ insert into aluno values ( 3008, 'Judite Presley', '2000-06-28', '123.456.789-07
 
 insert into estuda values ( 7508, 3008, 2023100 );
 
- update disciplina set nome = 'Programação Python' where cod_disciplina = 55;
+update disciplina set nome = 'Programação Python' where cod_disciplina = 55;
 
 
 
+SOBRE SELECT :
+
+
+select * from aluno where nascimento = '1995-03-02';
+
+select matricula, nome from aluno;
+
+select matricula, nome from aluno order by nome;
+
+select matricula, nome from aluno order by responsavel;
+
+select matricula, nome, responsavel from aluno order by responsavel;
+
+select matricula, nome, responsavel from aluno order by responsavel desc;
+
+select * from aluno where matricula = 3008;
+
+select * from aluno where matricula < 3008;
+
+select * from aluno where matricula != 3008;
+
+select * from aluno where matricula <> 3008;
+
+select * from aluno where matricula >= 3004 and matricula <= 3008;
+
+select * from aluno where matricula <= 3004 or matricula >= 3007;
+
+select * from aluno where matricula <= 3004 or matricula >= 3007 order by nascimento;
+
+select * from aluno where matricula <= 3004 or matricula >= 3007 order by nascimento desc;
+
+select nome, nascimento, cpf from aluno where matricula <= 3004 or matricula >= 3007 order by nascimento desc;
+
+select nascimento, cpf, nome from aluno where matricula <= 3004 or matricula >= 3007 order by nascimento desc;
+
+select * from aluno where email is null;
+
+select * from aluno where not email is null;
+
+select * from aluno where email is not null;
+
+select * from aluno where matricula >= 3004 and matricula <= 3008;
+
+select * from aluno where matricula between 3004 and 3008;
+
+select * from aluno where matricula in (3003, 3006, 3007);
+
+select * from aluno where not matricula in (3003, 3006, 3007);
+
+select * from aluno where matricula not in (3003, 3006, 3007);
+
+select * from aluno where nome like 'G%';
+
+select * from aluno where nome like 'Ge%';
+
+select * from aluno where nome like '%e';
+
+select * from aluno where nome like '_o%';
+
+select * from aluno where nome like '__n%';
+
+select * from aluno where nome like '%a%';
+
+select * from aluno where nome like '%mouse';
+
+select * from aluno where nome like 'mouse%';
+
+select * from aluno where nome like '%_mouse%';
+
+select * from aluno where nome like '% mouse%';
+
+select avg(dependentes) from professor;
+
+select count(dependentes) from professor where dependentes = 3;
+
+select sum(dependentes) from professor;
+
+select max(dependentes) from professor;
+
+select min(dependentes) from professor;
+
+select matricula, nome, nascimento, month(nascimento) from aluno;
+
+select matricula, nome, nascimento from aluno where month(nascimento) = 3;
+
+select matricula, nome, nascimento from aluno where day(nascimento) = 15;
+
+select matricula, nome, nascimento from aluno where year(nascimento) = 2000;
+
+select matricula, nome, nascimento, monthname(nascimento) from aluno;
+
+select matricula, nome, nascimento, email from aluno;
+
+select concat('Nome do aluno: ', nome) from aluno;
+
+select concat('Nome: ', nome,  ' - E-mail', email) from aluno where email is not null;
+
+select concat('Nome: ', nome,  ' - Data de Nascimento', nascimento) from aluno;
+
+select upper(nome) from aluno;
+
+select aluno.nome, turma.definicao, turma.turno from aluno, turma, estuda where aluno.matricula = estuda.fk_aluno_matricula and fk_turma_numero = turma.numero;
+
+select aluno.nome, turma.definicao, turma.turno from aluno, turma, estuda where aluno.matricula = estuda.fk_aluno_matricula and fk_turma_numero = turma.numero and aluno.matricula = 3001;
+
+select aluno.nome, turma.definicao, turma.turno from aluno, turma, estuda where aluno.matricula = estuda.fk_aluno_matricula and fk_turma_numero = turma.numero order by aluno.nome;
+
+select aluno.nome, disciplina.nome from aluno, estuda, turma, possui, disciplina where aluno.matricula = estuda.fk_aluno_matricula and estuda.fk_turma_numero = turma.numero and turma.numero = possui.fk_turma_numero and possui.fk_disciplina_cod_disciplina = disciplina.cod_disciplina;
+
+select aluno.nome, disciplina.nome from aluno, estuda, turma, possui, disciplina where aluno.matricula = estuda.fk_aluno_matricula and estuda.fk_turma_numero = turma.numero and turma.numero = possui.fk_turma_numero and possui.fk_disciplina_cod_disciplina = disciplina.cod_disciplina order by aluno.nome;
+
+
+CONTINUANDO INFORMAÇÕES
+
+
+insert into aluno values ( null, 'Renata Mouse', '1995-03-15', '123.456.789-08', 'Wesley Keyboard', 'rm@email.com');
+
+update aluno set nome = 'Renata Mouse Silva' where matricula = 3009;
+
+insert into aluno values ( null, 'Mouse Sherman Williams', '2015-09-12', '123.456.789-09', 'Cpu Sherman', null );
+
+alter table professor add dependentes int;
+
+update professor set dependentes = '3' where matricula = 202311;
+
+update professor set dependentes = '0' where matricula = 202312;
+
+update professor set dependentes = null where matricula = 202313;
 
 
 select * from aluno;

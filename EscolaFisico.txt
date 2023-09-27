@@ -1,4 +1,4 @@
-create database escola;
+secreate database escola;
 
 use escola;
 
@@ -241,6 +241,7 @@ update professor set dependentes = '0' where matricula = 202312;
 
 update professor set dependentes = null where matricula = 202313;
 
+ select aluno.nome, turma.turno from aluno, turma, estuda where aluno.matricula = estuda.fk_Aluno_matricula and fk_Turma_numero = turma.numero = turma.turno = 'M';
 
 select * from aluno;
 
